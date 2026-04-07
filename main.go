@@ -1,7 +1,18 @@
 package main
 
+import (
+	"time"
+
+	"github.com/ham-andres/gopokedex/internal/pokeapi"
+)
+
 
 func main() {
-	cfg := &config{}
+	pokeClient := pokeapi.NewClient(5 * time.Second)
+	
+	cfg := &config{
+		pokeapiClient: pokeClient,
+	}
+
 	startRepl(cfg)	
 }
