@@ -28,9 +28,9 @@ func NewCache(interval time.Duration) *Cache {
 func (c *Cache) Add(key string, val []byte) {
 	c.mu.Lock()
 	defer c.mu.Unlock()
-	c.cache[key] = cacheEntry{
+	c.cachemap[key] = cacheEntry{
 		createdAt: time.Now(),
-		val:			 value,
+		val:			 val,
 	}
 }
 

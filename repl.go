@@ -37,7 +37,7 @@ func startRepl(cfg *config) {
 		cmd, exists := command[words[0]]
 
 		if exists {
-			err := cmd.Callback(cfg)
+			err := cmd.Callback(cfg, words[1:])
 			if err != nil {
 				fmt.Println(err)
 			}
@@ -63,7 +63,7 @@ func cleanInput(text string) []string {
 type cliCommand struct {
 	Name        string
 	Description string
-	Callback    func(*config) error
+	Callback    func(*config, []string ) error
 }
 
 // had to keep inside the func as the commands map is global and when
@@ -91,6 +91,12 @@ func getCommands() map[string]cliCommand {
 			Description:	"Get the previous page of locations",
 			Callback: 		commandMapb,
 		},
+		"explore": {
+			Name: 				"explore",
+			Description: 	"Get the pokemon list of the locations",
+			Callback: 		commandExplore,
+		},
+
 	}
 	return commands
 }

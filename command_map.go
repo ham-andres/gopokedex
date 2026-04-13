@@ -7,7 +7,7 @@ import (
 
 
 // this function is for map forward 
-func commandMapf(cfg *config) error {
+func commandMapf(cfg *config, args[]string) error {
 	locationsResp, err := cfg.pokeapiClient.ListLocations(cfg.NextLocationsURL)
 	if err != nil {
 		return err
@@ -54,7 +54,7 @@ func commandMapf(cfg *config) error {
 
 // this function is for map backward 
 
-func commandMapb(cfg *config) error {
+func commandMapb(cfg *config, args[]string) error {
 	if cfg.PrevLocationsURL == nil {
 		return errors.New("you're on the first page")
 	}
