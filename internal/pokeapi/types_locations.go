@@ -20,3 +20,6 @@ type LocatePokemon struct {
 		}	`json:"pokemon"`
 	} `json:"pokemon_encounters"`
 }
+
+
+
