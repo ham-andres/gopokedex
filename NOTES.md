@@ -18,11 +18,14 @@
 |---------|------|--------|
 | help    | command_help.go | done |
 | map     | command_map.go  | done |
-| catch   | command_catch.go | WIP |
+| explore | command_explore.go | done |
+| catch   | command_catch.go | done |
+| inspect | command_inspect.go | WIP|
 
 ## TODO
-- [ ] catch command
-- [ ] store caught pokemon
+- add inspect command 
+- [ ] adding feature to see name, height, stats and types 
+
 
 ## Roles Details
 - `client` - the messenger, which get info from http.
